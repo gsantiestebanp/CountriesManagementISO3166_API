@@ -3,6 +3,7 @@ using Countries_Management_ISO3166_API.Services.Interfaces;
 using CountriesManagementISO3166_API.Context;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -28,7 +29,7 @@ namespace CountriesManagementISO3166_API
             services.AddScoped<ISubdivisionService, SubdivisionService>();
 
             services.AddDbContext<ApplicationDBContext>(opt => opt.UseSqlServer
-                (Configuration.GetConnectionString("DefaultConnection")));
+            (Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddSwaggerGen(c =>
             {

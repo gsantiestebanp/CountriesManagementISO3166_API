@@ -23,6 +23,7 @@ namespace CountriesManagementISO3166_API.Dtos
 
         [Required]
         [MaxLength(3)]
+        [Range(1, int.MaxValue)]
         public int NumericCode { get; set; }
 
         public int NumberSubdivisions { get; set; }
