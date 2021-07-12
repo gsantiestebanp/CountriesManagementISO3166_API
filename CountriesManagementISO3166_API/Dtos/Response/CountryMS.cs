@@ -1,12 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Countries_Management_ISO3166_API.Models
+namespace CountriesManagementISO3166_API.Dtos
 {
-    public class Countrie
+    public class CountryMS
     {
-        [Key]
         [Required]
-        public int CountrieId { get; set; }
+        public int CountryId { get; set; }
 
         [Required]
         public string CommonName { get; set; }
@@ -32,4 +31,3 @@ namespace Countries_Management_ISO3166_API.Models
         public string Observation { get; set; }
     }
 }
-    

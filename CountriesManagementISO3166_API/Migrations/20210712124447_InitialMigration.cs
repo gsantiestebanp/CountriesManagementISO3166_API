@@ -10,7 +10,7 @@ namespace CountriesManagementISO3166_API.Migrations
                 name: "Countries",
                 columns: table => new
                 {
-                    CountrieId = table.Column<int>(type: "int", nullable: false)
+                    CountryId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CommonName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     IsoName = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -22,7 +22,7 @@ namespace CountriesManagementISO3166_API.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Countries", x => x.CountrieId);
+                    table.PrimaryKey("PK_Countries", x => x.CountryId);
                 });
 
             migrationBuilder.CreateTable(

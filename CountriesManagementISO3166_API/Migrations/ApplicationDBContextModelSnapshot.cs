@@ -18,9 +18,9 @@ namespace CountriesManagementISO3166_API.Migrations
                 .HasAnnotation("ProductVersion", "5.0.7")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Countries_Management_ISO3166_API.Models.Countrie", b =>
+            modelBuilder.Entity("CountriesManagementISO3166_API.Models.Country", b =>
                 {
-                    b.Property<int>("CountrieId")
+                    b.Property<int>("CountryId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -53,12 +53,12 @@ namespace CountriesManagementISO3166_API.Migrations
                     b.Property<string>("Observation")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("CountrieId");
+                    b.HasKey("CountryId");
 
                     b.ToTable("Countries");
                 });
 
-            modelBuilder.Entity("Countries_Management_ISO3166_API.Models.Subdivision", b =>
+            modelBuilder.Entity("CountriesManagementISO3166_API.Models.Subdivision", b =>
                 {
                     b.Property<int>("SubdivisionId")
                         .ValueGeneratedOnAdd()

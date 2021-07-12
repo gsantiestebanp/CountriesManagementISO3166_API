@@ -1,4 +1,4 @@
-﻿using Countries_Management_ISO3166_API.Models;
+﻿using CountriesManagementISO3166_API.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace CountriesManagementISO3166_API.Context
@@ -10,7 +10,7 @@ namespace CountriesManagementISO3166_API.Context
 
         }
 
-        public DbSet<Countrie> Countries { get; set; }
+        public DbSet<Country> Countries { get; set; }
         public DbSet<Subdivision> Subdivisions { get; set; }
     }
 }

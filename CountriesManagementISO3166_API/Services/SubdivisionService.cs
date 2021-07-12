@@ -1,36 +1,59 @@
-﻿using Countries_Management_ISO3166_API.Models;
-using Countries_Management_ISO3166_API.Services.Interfaces;
+﻿using CountriesManagementISO3166_API.Context;
+using CountriesManagementISO3166_API.Models;
+using CountriesManagementISO3166_API.Services.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
+using System.Linq;
 
-namespace Countries_Management_ISO3166_API.Services
+namespace CountriesManagementISO3166_API.Services
 {
     public class SubdivisionService : ISubdivisionService
     {
-        public Task DeleteSubdivision(Subdivision subdivision)
+        private readonly ApplicationDBContext _context;
+
+        public SubdivisionService(ApplicationDBContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
         }
 
-        public Task<List<Subdivision>> GetAllSubdivisions()
+        public void DeleteSubdivision(Subdivision subdivision)
         {
-            throw new NotImplementedException();
+            if (subdivision != null)
+            {
+                _context.Subdivisions.Remove(subdivision);
+            }
+            else
+                throw new ArgumentNullException(nameof(subdivision));
         }
 
-        public Task<Subdivision> GetSubdivisionById(int id)
+        public IList<Subdivision> GetAllSubdivisions()
         {
-            throw new NotImplementedException();
+            return _context.Subdivisions.ToList();
         }
 
-        public Task InsertSubdivision(Subdivision subdivision)
+        public Subdivision GetSubdivisionById(int id)
         {
-            throw new NotImplementedException();
+            return _context.Subdivisions.FirstOrDefault(p => p.SubdivisionId == id);
         }
 
-        public Task UpdateSubdivision(Subdivision subdivision)
+        public void InsertSubdivision(Subdivision subdivision)
         {
-            throw new NotImplementedException();
+            if (subdivision != null)
+            {
+                _context.Subdivisions.Add(subdivision);
+            }
+            else
+                throw new ArgumentNullException(nameof(subdivision));
+        }
+
+        public bool SaveChanges()
+        {
+            return (_context.SaveChanges() >= 0);
+        }
+
+        public void UpdateSubdivision(Subdivision subdivision)
+        {
+            // Method intentionally left empty. 
         }
     }
 }

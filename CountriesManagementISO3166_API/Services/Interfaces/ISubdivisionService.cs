@@ -1,15 +1,16 @@
-﻿using Countries_Management_ISO3166_API.Models;
+﻿using CountriesManagementISO3166_API.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Countries_Management_ISO3166_API.Services.Interfaces
+namespace CountriesManagementISO3166_API.Services.Interfaces
 {
     public interface ISubdivisionService
     {
-        Task<List<Subdivision>> GetAllSubdivisions();
-        Task<Subdivision> GetSubdivisionById(int id);
-        Task InsertSubdivision(Subdivision subdivision);
-        Task UpdateSubdivision(Subdivision subdivision);
-        Task DeleteSubdivision(Subdivision subdivision);
+        bool SaveChanges();
+        IList<Subdivision> GetAllSubdivisions();
+        Subdivision GetSubdivisionById(int id);
+        void InsertSubdivision(Subdivision subdivision);
+        void UpdateSubdivision(Subdivision subdivision);
+        void DeleteSubdivision(Subdivision subdivision);
     }
 }
