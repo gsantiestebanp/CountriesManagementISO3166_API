@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Countries_Management_ISO3166_API.Models
+namespace CountriesManagementISO3166_API.Models
 {
     public class Countrie
     {

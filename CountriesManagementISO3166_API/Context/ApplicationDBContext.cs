@@ -1,4 +1,4 @@
-﻿using Countries_Management_ISO3166_API.Models;
+﻿using CountriesManagementISO3166_API.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace CountriesManagementISO3166_API.Context

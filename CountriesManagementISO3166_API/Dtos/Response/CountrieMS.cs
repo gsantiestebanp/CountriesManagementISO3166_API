@@ -2,7 +2,7 @@
 
 namespace CountriesManagementISO3166_API.Dtos
 {
-    public class CountrieDto
+    public class CountrieMS
     {
         [Required]
         public int CountrieId { get; set; }

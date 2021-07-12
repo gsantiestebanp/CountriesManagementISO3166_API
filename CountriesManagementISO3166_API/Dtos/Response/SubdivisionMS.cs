@@ -1,10 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace CountriesManagementISO3166_API.Models
+namespace CountriesManagementISO3166_API.Dtos
 {
-    public class Subdivision
+    public class SubdivisionMS
     {
-        [Key]
         [Required]
         public int SubdivisionId { get; set; }
 

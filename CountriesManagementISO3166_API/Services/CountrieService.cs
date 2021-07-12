@@ -1,39 +1,58 @@
-﻿using Countries_Management_ISO3166_API.Models;
+﻿using CountriesManagementISO3166_API.Models;
+using CountriesManagementISO3166_API.Context;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Countries_Management_ISO3166_API.Services
+namespace CountriesManagementISO3166_API.Services
 {
     public class CountrieService : ICountrieService
     {
-        public Task DeleteCountrie(Countrie countrie)
+        private readonly ApplicationDBContext _context;
+
+        public CountrieService(ApplicationDBContext context)
+        {
+            _context = context;          
+        }
+
+        public void DeleteCountrie(Countrie countrie)
         {
             throw new NotImplementedException();
         }
 
-        public Task<List<Countrie>> GetAllCountries()
+        public IList<Countrie> GetAllCountries()
         {
             throw new NotImplementedException();
         }
 
-        public Task<Countrie> GetCountrieByAlpha2Code(string alpha2Code)
+        public Countrie GetCountrieByAlpha2Code(string alpha2Code)
         {
             throw new NotImplementedException();
         }
 
-        public Task<Countrie> GetCountrieByCommonName(string commonName)
+        public Countrie GetCountrieByCommonName(string commonName)
         {
             throw new NotImplementedException();
         }
 
-        public Task InsertCountrie(Countrie countrie)
+        public Countrie GetCountrieById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Task UpdateCountrie(Countrie countrie)
+        public void InsertCountrie(Countrie countrie)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool SaveChanges()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void UpdateCountrie(Countrie countrie)
         {
             throw new NotImplementedException();
         }

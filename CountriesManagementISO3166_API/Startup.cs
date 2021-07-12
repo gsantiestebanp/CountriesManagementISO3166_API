@@ -1,5 +1,5 @@
-using Countries_Management_ISO3166_API.Services;
-using Countries_Management_ISO3166_API.Services.Interfaces;
+using CountriesManagementISO3166_API.Services;
+using CountriesManagementISO3166_API.Services.Interfaces;
 using CountriesManagementISO3166_API.Context;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
