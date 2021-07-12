@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using System;
 
 namespace CountriesManagementISO3166_API
 {
@@ -25,11 +26,13 @@ namespace CountriesManagementISO3166_API
         {
             services.AddControllers();
 
-            services.AddScoped<ICountrieService, CountrieService>();
+            services.AddScoped<ICountryService, CountryService>();
             services.AddScoped<ISubdivisionService, SubdivisionService>();
 
             services.AddDbContext<ApplicationDBContext>(opt => opt.UseSqlServer
             (Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             services.AddSwaggerGen(c =>
             {

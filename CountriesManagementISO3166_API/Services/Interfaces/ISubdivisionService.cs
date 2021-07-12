@@ -6,6 +6,7 @@ namespace CountriesManagementISO3166_API.Services.Interfaces
 {
     public interface ISubdivisionService
     {
+        bool SaveChanges();
         IList<Subdivision> GetAllSubdivisions();
         Subdivision GetSubdivisionById(int id);
         void InsertSubdivision(Subdivision subdivision);

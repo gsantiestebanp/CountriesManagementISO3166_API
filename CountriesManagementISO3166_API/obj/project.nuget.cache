@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "yb/XB/CRVjyAVIw5bK3dFyR5EPtz471WvMeCdTGPhGOfhZV4BVYrIdxx+UH+Cjur/s10PwAkdWBxkGeaVTIjsg==",
+  "dgSpecHash": "bRTAwhAWTgoKDUtjEZhAZC/uvaH+NDejhahzTGUHY6cuA54P0oAfrPOKyAP3QW4q+P81y27niKRCWciEkUIjZg==",
   "success": true,
   "projectFilePath": "D:\\SoluciónPruebaV6[TSC]\\CountriesManagementISO3166_API\\CountriesManagementISO3166_API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Gustavo\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
+    "C:\\Users\\Gustavo\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
     "C:\\Users\\Gustavo\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\Gustavo\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Gustavo\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

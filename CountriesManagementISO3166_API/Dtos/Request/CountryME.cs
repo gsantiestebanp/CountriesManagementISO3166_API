@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace CountriesManagementISO3166_API.Dtos.Request
+﻿namespace CountriesManagementISO3166_API.Dtos.Request
 {
-    public class CountrieME
+    public class CountryME
     {
-        public int CountrieId { get; set; }
+        public int CountryId { get; set; }
         public string CommonName { get; set; }     
         public string IsoName { get; set; }        
         public string Alpha2Code { get; set; }

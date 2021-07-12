@@ -8,13 +8,17 @@ namespace CountriesManagementISO3166_API.MapperConfigurator
     public class AutoMapperConfiguratorProfile : Profile
     {
         public AutoMapperConfiguratorProfile()
-        {
+        {      
             //Source -> Target
-            CreateMap<Countrie, CountrieMS>();
+            CreateMap<Country, CountryME>();
+            CreateMap<Subdivision, SubdivisionME>();
+            CreateMap<Country, CountryMS>();
             CreateMap<Subdivision, SubdivisionMS>();
 
             //Target -> Source
-            CreateMap<CountrieMS, Countrie>();
+            CreateMap<CountryME, Country>();
+            CreateMap<SubdivisionME, Subdivision>();
+            CreateMap<CountryMS, Country>();
             CreateMap<SubdivisionMS, Subdivision>();
         }
     }
