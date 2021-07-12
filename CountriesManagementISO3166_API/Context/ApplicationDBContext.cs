@@ -12,6 +12,7 @@ namespace CountriesManagementISO3166_API.Context
 
         public DbSet<Country> Countries { get; set; }
         public DbSet<Subdivision> Subdivisions { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }
  

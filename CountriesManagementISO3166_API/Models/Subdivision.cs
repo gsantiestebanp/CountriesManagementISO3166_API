@@ -9,6 +9,9 @@ namespace CountriesManagementISO3166_API.Models
         public int SubdivisionId { get; set; }
 
         [Required]
+        public int CountryId { get; set; }
+
+        [Required]
         public string Name { get; set; }
 
         [Required]
