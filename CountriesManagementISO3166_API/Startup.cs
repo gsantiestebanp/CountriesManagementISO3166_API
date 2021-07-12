@@ -9,6 +9,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using System;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace CountriesManagementISO3166_API
 {
@@ -33,6 +36,10 @@ namespace CountriesManagementISO3166_API
             (Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+            
+            services.AddCors();
+            services.AddHttpClient();
+            services.AddControllers();
 
             services.AddSwaggerGen(c =>
             {

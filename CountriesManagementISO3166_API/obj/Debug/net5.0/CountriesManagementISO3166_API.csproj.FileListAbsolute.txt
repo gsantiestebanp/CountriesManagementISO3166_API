@@ -26,7 +26,6 @@ D:\SoluciónPruebaV6[TSC]\CountriesManagementISO3166_API\bin\Debug\net5.0\Micros
 D:\SoluciónPruebaV6[TSC]\CountriesManagementISO3166_API\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 D:\SoluciónPruebaV6[TSC]\CountriesManagementISO3166_API\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
 D:\SoluciónPruebaV6[TSC]\CountriesManagementISO3166_API\bin\Debug\net5.0\Microsoft.OpenApi.dll
-D:\SoluciónPruebaV6[TSC]\CountriesManagementISO3166_API\bin\Debug\net5.0\Newtonsoft.Json.dll
 D:\SoluciónPruebaV6[TSC]\CountriesManagementISO3166_API\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
 D:\SoluciónPruebaV6[TSC]\CountriesManagementISO3166_API\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\SoluciónPruebaV6[TSC]\CountriesManagementISO3166_API\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -69,3 +68,5 @@ D:\SoluciónPruebaV6[TSC]\CountriesManagementISO3166_API\obj\Debug\net5.0\Countr
 D:\SoluciónPruebaV6[TSC]\CountriesManagementISO3166_API\obj\Debug\net5.0\ref\CountriesManagementISO3166_API.dll
 D:\SoluciónPruebaV6[TSC]\CountriesManagementISO3166_API\obj\Debug\net5.0\CountriesManagementISO3166_API.pdb
 D:\SoluciónPruebaV6[TSC]\CountriesManagementISO3166_API\obj\Debug\net5.0\CountriesManagementISO3166_API.genruntimeconfig.cache
+D:\SoluciónPruebaV6[TSC]\CountriesManagementISO3166_API\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\SoluciónPruebaV6[TSC]\CountriesManagementISO3166_API\obj\Debug\net5.0\CountriesManagementISO3166_API.csprojAssemblyReference.cache
