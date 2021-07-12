@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using CountriesManagementISO3166_API.Dtos;
 using CountriesManagementISO3166_API.Dtos.Request;
+using CountriesManagementISO3166_API.Helpers;
 using CountriesManagementISO3166_API.Models;
 using CountriesManagementISO3166_API.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -21,53 +22,54 @@ namespace CountriesManagementISO3166_API.Controllers
             _mapper = mapper;
         }
 
+        [Authorize]
         [HttpGet("GetAllCountries")]
         public ActionResult<IEnumerable<CountryMS>> GetAllCountries()
         {
-            var countrieItems = _countryService.GetAllCountries();
-            return Ok(_mapper.Map<IEnumerable<CountryMS>>(countrieItems));
+            var countryItems = _countryService.GetAllCountries();
+            return Ok(_mapper.Map<IEnumerable<CountryMS>>(countryItems));
         }
 
         [HttpPost("GetCountryByCommonName")]
-        public ActionResult<CountryMS> GetCountrieByCommonName(GetCountryByCommonNameME countrie)
+        public ActionResult<CountryMS> GetCountryByCommonName(GetCountryByCommonNameME country)
         {
-            var countrieItem = _countryService.GetCountryByCommonName(countrie.CommonName);
-            if (countrieItem != null)
+            var countryItem = _countryService.GetCountryByCommonName(country.CommonName);
+            if (countryItem != null)
             {
-                return Ok(_mapper.Map<CountryMS>(countrieItem));
+                return Ok(_mapper.Map<CountryMS>(countryItem));
             }
             return NotFound();
         }
 
         [HttpPost("GetCountryByAlpha2Code")]
-        public ActionResult<CountryMS> GetCountrieByAlpha2Code(GetCountryByAlpha2CodeME countrie)
+        public ActionResult<CountryMS> GetCountryByAlpha2Code(GetCountryByAlpha2CodeME country)
         {
-            var countrieItem = _countryService.GetCountryByCommonName(countrie.Alpha2Code);
+            var countryItem = _countryService.GetCountryByAlpha2Code(country.Alpha2Code);
             
-            if (countrieItem != null)
+            if (countryItem != null)
             {
-                return Ok(_mapper.Map<CountryMS>(countrieItem));
+                return Ok(_mapper.Map<CountryMS>(countryItem));
             }
             return NotFound();
         }
 
         [HttpPost("InsertCountry")]
-        public ActionResult<CountryMS> InsertCountrie(CountryME countrie)
+        public ActionResult<CountryMS> InsertCountry(CountryME country)
         {
-            var countrieModel = _mapper.Map<Country>(countrie);
-            _countryService.InsertCountry(countrieModel);
+            var countryModel = _mapper.Map<Country>(country);
+            _countryService.InsertCountry(countryModel);
             _countryService.SaveChanges();
             return NoContent();            
         }
 
         [HttpPut("UpdateCountry")]
-        public ActionResult UpdateCountrie(CountryME countrie)
+        public ActionResult UpdateCountry(CountryME country)
         {
-            var countrieModel = _countryService.GetCountryById(countrie.CountryId);
-            if (countrieModel != null)
+            var countryModel = _countryService.GetCountryById(country.CountryId);
+            if (countryModel != null)
             {
-                _mapper.Map(countrie, countrieModel);
-                _countryService.UpdateCountry(countrieModel);
+                _mapper.Map(country, countryModel);
+                _countryService.UpdateCountry(countryModel);
                 _countryService.SaveChanges();
                 return NoContent();
             }
@@ -76,12 +78,12 @@ namespace CountriesManagementISO3166_API.Controllers
         }
 
         [HttpDelete("DeleteCountry")]
-        public ActionResult DeleteCountrie(CountryME countrie)
+        public ActionResult DeleteCountry(CountryME country)
         {
-            var countrieModel = _countryService.GetCountryById(countrie.CountryId);
-            if (countrieModel != null)
+            var countryModel = _countryService.GetCountryById(country.CountryId);
+            if (countryModel != null)
             {
-                _countryService.DeleteCountry(countrieModel);
+                _countryService.DeleteCountry(countryModel);
                 _countryService.SaveChanges();
                 return NoContent();
             }
