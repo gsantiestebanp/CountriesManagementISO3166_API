@@ -1,6 +1,7 @@
+using CountriesManagementISO3166_API.Context;
+using CountriesManagementISO3166_API.Helpers;
 using CountriesManagementISO3166_API.Services;
 using CountriesManagementISO3166_API.Services.Interfaces;
-using CountriesManagementISO3166_API.Context;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -9,10 +10,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using System;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Tokens;
-using System.Text;
-using CountriesManagementISO3166_API.Helpers;
 using System.Collections.Generic;
 
 namespace CountriesManagementISO3166_API
@@ -57,23 +54,22 @@ namespace CountriesManagementISO3166_API
                     Scheme = "Bearer"
                 });
                 c.AddSecurityRequirement(new OpenApiSecurityRequirement
-                     {
-                            {
-                                new OpenApiSecurityScheme
-                                {
-                                    Reference = new OpenApiReference
-                                    {
-                                        Type = ReferenceType.SecurityScheme,
-                                        Id = "Bearer"
-                                    },
-                                    Scheme = "oauth2",
-                                    Name = "Bearer",
-                                    In = ParameterLocation.Header,
-
-                                },
-                                new List<string>()
-                            }
-                     });
+                {
+                    {
+                         new OpenApiSecurityScheme
+                         {
+                              Reference = new OpenApiReference
+                              {
+                                  Type = ReferenceType.SecurityScheme,
+                                  Id = "Bearer"
+                              },
+                              Scheme = "oauth2",
+                              Name = "Bearer",
+                              In = ParameterLocation.Header,
+                         },
+                         new List<string>()
+                    }
+                });
             });
         }
 
