@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using CountriesManagementISO3166_API.Dtos;
 using CountriesManagementISO3166_API.Dtos.Request;
+using CountriesManagementISO3166_API.Helpers;
 using CountriesManagementISO3166_API.Models;
 using CountriesManagementISO3166_API.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -21,6 +22,7 @@ namespace CountriesManagementISO3166_API.Controllers
             _mapper = mapper;
         }
 
+        [Authorize]
         [HttpGet("GetAllSubdivisions")]
         public ActionResult<IList<SubdivisionMS>> GetAllSubdivisions()
         {
@@ -28,6 +30,7 @@ namespace CountriesManagementISO3166_API.Controllers
             return Ok(_mapper.Map<IEnumerable<SubdivisionMS>>(countrieItems));
         }
 
+        [Authorize]
         [HttpPost("GetSubdivisionById")]
         public ActionResult<SubdivisionMS> GetSubdivisionById(GetSubdivisionByIdME subdivision)
         {
@@ -39,6 +42,15 @@ namespace CountriesManagementISO3166_API.Controllers
             return NotFound();
         }
 
+        [Authorize]
+        [HttpGet("GetSubdivisionsByCountryId")]
+        public ActionResult<IList<SubdivisionMS>> GetSubdivisionsByCountryId(int id)
+        {
+            var subdivisions = _subdivisionService.GetSubdivisionsByCountryId(id);
+            return Ok(_mapper.Map<IEnumerable<SubdivisionMS>>(subdivisions));
+        }
+
+        [Authorize]
         [HttpPost("InsertSubdivision")]
         public ActionResult<SubdivisionMS> InsertSubdivision(SubdivisionME subdivision)
         {
@@ -47,6 +59,7 @@ namespace CountriesManagementISO3166_API.Controllers
             return NoContent();
         }
 
+        [Authorize]
         [HttpPut("UpdateSubdivision")]
         public ActionResult UpdateSubdivision(SubdivisionME subdivision)
         {
@@ -62,6 +75,7 @@ namespace CountriesManagementISO3166_API.Controllers
                 return NotFound();
         }
 
+        [Authorize]
         [HttpDelete("DeleteSubdivision")]
         public ActionResult DeleteSubdivision(SubdivisionME subdivision)
         {

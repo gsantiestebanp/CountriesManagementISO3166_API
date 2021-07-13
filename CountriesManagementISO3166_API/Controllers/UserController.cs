@@ -1,7 +1,6 @@
 ﻿using CountriesManagementISO3166_API.Dtos.Request;
 using CountriesManagementISO3166_API.Dtos.Response;
 using CountriesManagementISO3166_API.Services.Interfaces;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CountriesManagementISO3166_API.Controllers
@@ -18,7 +17,7 @@ namespace CountriesManagementISO3166_API.Controllers
         }
 
         [HttpPost("Authenticate")]
-        public IActionResult Authenticate(AuthenticateME model)
+        public ActionResult<AuthenticateMS> Authenticate(AuthenticateME model)
         {
             var response = _userService.Authenticate(model);
 

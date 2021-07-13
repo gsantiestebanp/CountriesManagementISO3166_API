@@ -29,11 +29,16 @@ namespace CountriesManagementISO3166_API.Services
         public IList<Subdivision> GetAllSubdivisions()
         {
             return _context.Subdivisions.ToList();
-        }
+        }       
 
         public Subdivision GetSubdivisionById(int id)
         {
             return _context.Subdivisions.FirstOrDefault(p => p.SubdivisionId == id);
+        }
+
+        public IList<Subdivision> GetSubdivisionsByCountryId(int id)
+        {           
+            return _context.Subdivisions.Where(p => p.CountryId == id).ToList();            
         }
 
         public void InsertSubdivision(Subdivision subdivision)
@@ -54,6 +59,6 @@ namespace CountriesManagementISO3166_API.Services
         public void UpdateSubdivision(Subdivision subdivision)
         {
             // Method intentionally left empty. 
-        }
+        }     
     }
 }

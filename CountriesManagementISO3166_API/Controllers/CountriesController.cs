@@ -30,6 +30,7 @@ namespace CountriesManagementISO3166_API.Controllers
             return Ok(_mapper.Map<IEnumerable<CountryMS>>(countryItems));
         }
 
+        [Authorize]
         [HttpPost("GetCountryByCommonName")]
         public ActionResult<CountryMS> GetCountryByCommonName(GetCountryByCommonNameME country)
         {
@@ -41,6 +42,7 @@ namespace CountriesManagementISO3166_API.Controllers
             return NotFound();
         }
 
+        [Authorize]
         [HttpPost("GetCountryByAlpha2Code")]
         public ActionResult<CountryMS> GetCountryByAlpha2Code(GetCountryByAlpha2CodeME country)
         {
@@ -53,8 +55,9 @@ namespace CountriesManagementISO3166_API.Controllers
             return NotFound();
         }
 
+        [Authorize]
         [HttpPost("InsertCountry")]
-        public ActionResult<CountryMS> InsertCountry(CountryME country)
+        public ActionResult InsertCountry(CountryME country)
         {
             var countryModel = _mapper.Map<Country>(country);
             _countryService.InsertCountry(countryModel);
@@ -62,6 +65,7 @@ namespace CountriesManagementISO3166_API.Controllers
             return NoContent();            
         }
 
+        [Authorize]
         [HttpPut("UpdateCountry")]
         public ActionResult UpdateCountry(CountryME country)
         {
@@ -77,6 +81,7 @@ namespace CountriesManagementISO3166_API.Controllers
                return NotFound();
         }
 
+        [Authorize]
         [HttpDelete("DeleteCountry")]
         public ActionResult DeleteCountry(CountryME country)
         {
