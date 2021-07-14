@@ -52,10 +52,11 @@ namespace CountriesManagementISO3166_API.Controllers
 
         [Authorize]
         [HttpPost("InsertSubdivision")]
-        public ActionResult<SubdivisionMS> InsertSubdivision(SubdivisionME subdivision)
+        public ActionResult InsertSubdivision(SubdivisionME subdivision)
         {
             var subdivisionModel = _mapper.Map<Subdivision>(subdivision);
             _subdivisionService.InsertSubdivision(subdivisionModel);
+            _subdivisionService.SaveChanges();
             return NoContent();
         }
 
